@@ -4,13 +4,7 @@ namespace BBSLab\LighthousePersistedQueries\Tests;
 
 use BBSLab\LighthousePersistedQueries\LighthousePersistedQueriesServiceProvider;
 use BBSLab\LighthousePersistedQueries\PersistsQuery;
-use Nuwave\Lighthouse\GlobalId\GlobalIdServiceProvider;
 use Nuwave\Lighthouse\LighthouseServiceProvider;
-use Nuwave\Lighthouse\OrderBy\OrderByServiceProvider;
-use Nuwave\Lighthouse\Pagination\PaginationServiceProvider;
-use Nuwave\Lighthouse\Scout\ScoutServiceProvider;
-use Nuwave\Lighthouse\SoftDeletes\SoftDeletesServiceProvider;
-use Nuwave\Lighthouse\Validation\ValidationServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
