@@ -18,17 +18,17 @@ jobs:
         stability: [prefer-lowest, prefer-stable]
         include:
           - laravel: 8.*
-            testbench: ^6.6
-            lighthouse: ^4.0
+            testbench: 6.*
+            lighthouse: 4.*
           - laravel: 8.*
-            testbench: ^6.6
-            lighthouse: ^5.0
+            testbench: 6.*
+            lighthouse: 5.*
           - laravel: 7.*
-            testbench: ^5.0
-            lighthouse: ^4.0
+            testbench: 5.*
+            lighthouse: 4.*
           - laravel: 7.*
-            testbench: ^5.0
-            lighthouse: ^5.0
+            testbench: 5.*
+            lighthouse: 5.*
 
     name: P${{ matrix.php }} - LA${{ matrix.laravel }} - LI${{ matrix.lighthouse }} - ${{ matrix.stability }}
 
