@@ -11,7 +11,7 @@ class PersistsQueryTest extends TestCase
 {
     use MakesGraphQLRequests;
 
-
+    /** @test */
     public function can_call_test_query()
     {
         $this->graphQL($this->query())->assertJson([
@@ -21,7 +21,7 @@ class PersistsQueryTest extends TestCase
         ]);
     }
 
-
+    /** @test */
     public function get_error_when_query_is_not_persisted()
     {
         $url = $this->graphQLEndpointUrl().'?'.Arr::query($this->extensions());

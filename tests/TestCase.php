@@ -20,12 +20,6 @@ class TestCase extends Orchestra
         return [
             LighthousePersistedQueriesServiceProvider::class,
             LighthouseServiceProvider::class,
-            GlobalIdServiceProvider::class,
-            OrderByServiceProvider::class,
-            PaginationServiceProvider::class,
-            ScoutServiceProvider::class,
-            SoftDeletesServiceProvider::class,
-            ValidationServiceProvider::class,
         ];
     }
 
