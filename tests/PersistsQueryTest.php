@@ -3,11 +3,9 @@
 namespace BBSLab\LighthousePersistedQueries\Tests;
 
 use BBSLab\LighthousePersistedQueries\PersistsQuery;
-use Illuminate\Routing\Router;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Cache;
 use Nuwave\Lighthouse\Testing\MakesGraphQLRequests;
-use Symfony\Component\Routing\RouterInterface;
 
 class PersistsQueryTest extends TestCase
 {
@@ -35,8 +33,6 @@ class PersistsQueryTest extends TestCase
 
             ])
             ->assertHeader('Cache-Control', 'no-store, private');
-
-
     }
 
     /** @test */

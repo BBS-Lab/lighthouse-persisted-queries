@@ -14,7 +14,6 @@ class PersistsQuery
 
     public function handle(Request $request, Closure $next)
     {
-
         $extensions = $this->extensions($request);
 
         if (! $hash = data_get($extensions, 'persistedQuery.sha256Hash')) {
@@ -136,7 +135,7 @@ class PersistsQuery
     {
         $ttl = config('lighthouse-persisted-queries.cache.ttl', 0);
 
-        $callback = fn() => $query;
+        $callback = fn () => $query;
 
         $ttl > 0 ? Cache::remember($key, $ttl, $callback) : Cache::rememberForever($key, $callback);
     }

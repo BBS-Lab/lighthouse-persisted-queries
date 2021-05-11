@@ -2,6 +2,7 @@
 
 namespace BBSLab\LighthousePersistedQueries\Tests;
 
+use BBSLab\LighthousePersistedQueries\LighthousePersistedQueriesServiceProvider;
 use BBSLab\LighthousePersistedQueries\PersistsQuery;
 use Nuwave\Lighthouse\GlobalId\GlobalIdServiceProvider;
 use Nuwave\Lighthouse\LighthouseServiceProvider;
@@ -11,7 +12,6 @@ use Nuwave\Lighthouse\Scout\ScoutServiceProvider;
 use Nuwave\Lighthouse\SoftDeletes\SoftDeletesServiceProvider;
 use Nuwave\Lighthouse\Validation\ValidationServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use BBSLab\LighthousePersistedQueries\LighthousePersistedQueriesServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -25,7 +25,7 @@ class TestCase extends Orchestra
             PaginationServiceProvider::class,
             ScoutServiceProvider::class,
             SoftDeletesServiceProvider::class,
-            ValidationServiceProvider::class
+            ValidationServiceProvider::class,
         ];
     }
 
