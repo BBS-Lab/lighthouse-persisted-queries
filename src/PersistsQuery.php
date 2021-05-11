@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\Cache;
 
 class PersistsQuery
 {
-    protected bool $shouldAddCacheHeaders = true;
-
+    protected bool $shouldAddCacheHeaders = false;
 
     public function handle(Request $request, Closure $next)
     {
@@ -28,6 +27,7 @@ class PersistsQuery
             }
 
             $request = $this->replaceRequest($request, Cache::get($key));
+            $this->shouldAddCacheHeaders = true;
         } elseif ($request->isMethod(Request::METHOD_POST)) {
             $this->persistQuery($key, $request->input('query'));
         }
