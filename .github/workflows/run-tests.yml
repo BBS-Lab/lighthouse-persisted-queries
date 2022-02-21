@@ -37,6 +37,11 @@ jobs:
           - laravel: 7.*
             testbench: ^5.18
             lighthouse: 5.*
+        exlude:
+          - laravel: 9.*
+            php: 7.4
+          - laravel: 9.*
+            lighthouse: 4.*
 
     name: P${{ matrix.php }} - LA${{ matrix.laravel }} - LI${{ matrix.lighthouse }} - ${{ matrix.stability }}
 
