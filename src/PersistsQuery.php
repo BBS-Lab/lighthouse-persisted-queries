@@ -124,7 +124,8 @@ class PersistsQuery
             if ($session = $from->getSession()) {
                 $request->setLaravelSession($session);
             }
-        } catch (\Exception $e) {}
+        } catch (\Exception $e) {
+        }
 
         $request->setUserResolver($from->getUserResolver());
 
