@@ -120,8 +120,11 @@ class PersistsQuery
 
         $request->setJson($from->json());
 
-        if ($session = $from->getSession()) {
-            $request->setLaravelSession($session);
+        try {
+            if ($session = $from->getSession()) {
+                $request->setLaravelSession($session);
+            }
+        } catch (\Exception $e) {
         }
 
         $request->setUserResolver($from->getUserResolver());

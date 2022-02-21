@@ -17,6 +17,26 @@ jobs:
         lighthouse: [4.*, 5.*]
         stability: [prefer-lowest, prefer-stable]
         include:
+          - laravel: 9.*
+            testbench: ^7.0
+            lighthouse: 5.*
+            php: 8.0
+            stability: prefer-lowest
+          - laravel: 9.*
+            testbench: ^7.0
+            lighthouse: 5.*
+            php: 8.0
+            stability: prefer-stable
+          - laravel: 9.*
+            testbench: ^7.0
+            lighthouse: 5.*
+            php: 8.1
+            stability: prefer-lowest
+          - laravel: 9.*
+            testbench: ^7.0
+            lighthouse: 5.*
+            php: 8.1
+            stability: prefer-stable
           - laravel: 8.*
             testbench: ^6.6
             lighthouse: 4.*
@@ -50,8 +70,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "nuwave/lighthouse:${{ matrix.lighthouse }}" --no-interaction --no-update
-          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "nuwave/lighthouse:${{ matrix.lighthouse }}" --no-interaction --no-update --dev
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction --dev
 
       - name: Execute tests
         run: vendor/bin/phpunit
